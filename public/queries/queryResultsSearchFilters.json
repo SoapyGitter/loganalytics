@@ -1,0 +1,544 @@
+{
+  "results": [
+    {
+      "queryName": "Buyer_MenuItem_Published",
+      "avgExecutionTimeMongo": 12.33,
+      "avgExecutionTimeCode": 58.33,
+      "executionTimesMongo": [
+        17,
+        10,
+        10
+      ],
+      "executionTimesCode": [
+        61,
+        57,
+        57
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_OpenForBidding",
+      "avgExecutionTimeMongo": 9,
+      "avgExecutionTimeCode": 57,
+      "executionTimesMongo": [
+        9,
+        9,
+        9
+      ],
+      "executionTimesCode": [
+        57,
+        57,
+        57
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_InConsideration",
+      "avgExecutionTimeMongo": 8.33,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        9,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        57,
+        57
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Sold",
+      "avgExecutionTimeMongo": 9.67,
+      "avgExecutionTimeCode": 55.67,
+      "executionTimesMongo": [
+        11,
+        9,
+        9
+      ],
+      "executionTimesCode": [
+        55,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_NotSold",
+      "avgExecutionTimeMongo": 10,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        9,
+        12,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_StockAwaited",
+      "avgExecutionTimeMongo": 9.33,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        9,
+        9,
+        10
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_PendingBidExtensionApprovals",
+      "avgExecutionTimeMongo": 9,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        9,
+        9,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        58
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Draft",
+      "avgExecutionTimeMongo": 9.33,
+      "avgExecutionTimeCode": 55.67,
+      "executionTimesMongo": [
+        9,
+        10,
+        9
+      ],
+      "executionTimesCode": [
+        55,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Cancelled",
+      "avgExecutionTimeMongo": 9,
+      "avgExecutionTimeCode": 55.67,
+      "executionTimesMongo": [
+        9,
+        9,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        55
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_MyBidsOnSale",
+      "avgExecutionTimeMongo": 11.33,
+      "avgExecutionTimeCode": 56.33,
+      "executionTimesMongo": [
+        16,
+        9,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        57,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_IncomingCounterbid",
+      "avgExecutionTimeMongo": 10,
+      "avgExecutionTimeCode": 56.33,
+      "executionTimesMongo": [
+        9,
+        9,
+        12
+      ],
+      "executionTimesCode": [
+        56,
+        57,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Stock",
+      "avgExecutionTimeMongo": 11,
+      "avgExecutionTimeCode": 78,
+      "executionTimesMongo": [
+        9,
+        8,
+        16
+      ],
+      "executionTimesCode": [
+        68,
+        89,
+        77
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Favorite",
+      "avgExecutionTimeMongo": 8.67,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        9,
+        8,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        58,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Buyer_Counts",
+      "avgExecutionTimeMongo": 123.33,
+      "avgExecutionTimeCode": 63,
+      "executionTimesMongo": [
+        97,
+        158,
+        115
+      ],
+      "executionTimesCode": [
+        58,
+        63,
+        68
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Concept",
+      "avgExecutionTimeMongo": 8.67,
+      "avgExecutionTimeCode": 71.33,
+      "executionTimesMongo": [
+        11,
+        7,
+        8
+      ],
+      "executionTimesCode": [
+        68,
+        76,
+        70
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_WaitingForBid",
+      "avgExecutionTimeMongo": 9.67,
+      "avgExecutionTimeCode": 61,
+      "executionTimesMongo": [
+        10,
+        9,
+        10
+      ],
+      "executionTimesCode": [
+        61,
+        56,
+        66
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_InPreparation",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 60.67,
+      "executionTimesMongo": [
+        8,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        66,
+        60,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ReadyForSale",
+      "avgExecutionTimeMongo": 8.33,
+      "avgExecutionTimeCode": 55.67,
+      "executionTimesMongo": [
+        9,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        55,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_InCatalog",
+      "avgExecutionTimeMongo": 8.67,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        8,
+        10,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BidsReceived",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        8,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BidsInConsideration",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        8,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_WaitingForBuyer",
+      "avgExecutionTimeMongo": 10,
+      "avgExecutionTimeCode": 55.67,
+      "executionTimesMongo": [
+        8,
+        14,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        55
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ExtensionRequest",
+      "avgExecutionTimeMongo": 13,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        7,
+        20,
+        12
+      ],
+      "executionTimesCode": [
+        57,
+        57,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_NotSold",
+      "avgExecutionTimeMongo": 8.33,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        7,
+        11,
+        7
+      ],
+      "executionTimesCode": [
+        57,
+        56,
+        57
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BackOrder",
+      "avgExecutionTimeMongo": 8.33,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        9,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_SellCompleted",
+      "avgExecutionTimeMongo": 8.67,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        10,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Published",
+      "avgExecutionTimeMongo": 8.33,
+      "avgExecutionTimeCode": 56.33,
+      "executionTimesMongo": [
+        8,
+        8,
+        9
+      ],
+      "executionTimesCode": [
+        57,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Stock",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 56.33,
+      "executionTimesMongo": [
+        8,
+        8,
+        8
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        57
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ToBePublished",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 56,
+      "executionTimesMongo": [
+        7,
+        8,
+        9
+      ],
+      "executionTimesCode": [
+        56,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    },
+    {
+      "queryName": "Seller_Counts",
+      "avgExecutionTimeMongo": 124.33,
+      "avgExecutionTimeCode": 58.33,
+      "executionTimesMongo": [
+        112,
+        150,
+        111
+      ],
+      "executionTimesCode": [
+        58,
+        58,
+        59
+      ],
+      "indexesUsed": [
+        "Textsearchindexlots"
+      ]
+    }
+  ]
+}

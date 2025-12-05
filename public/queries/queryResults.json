@@ -1,0 +1,556 @@
+{
+  "results": [
+    {
+      "queryName": "Buyer_MenuItem_Published",
+      "avgExecutionTimeMongo": 2.67,
+      "avgExecutionTimeCode": 115.33,
+      "executionTimesMongo": [
+        4,
+        2,
+        2
+      ],
+      "executionTimesCode": [
+        115,
+        114,
+        117
+      ],
+      "indexesUsed": [
+        "idx_lots_active_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_OpenForBidding",
+      "avgExecutionTimeMongo": 1.33,
+      "avgExecutionTimeCode": 94.33,
+      "executionTimesMongo": [
+        2,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        59,
+        111,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_status_closed_groups_created"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_InConsideration",
+      "avgExecutionTimeMongo": 1,
+      "avgExecutionTimeCode": 57,
+      "executionTimesMongo": [
+        1,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        56,
+        58,
+        57
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Sold",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 56.67,
+      "executionTimesMongo": [
+        19,
+        3,
+        2
+      ],
+      "executionTimesCode": [
+        57,
+        56,
+        57
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_company_status_created"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_NotSold",
+      "avgExecutionTimeMongo": 13,
+      "avgExecutionTimeCode": 112.33,
+      "executionTimesMongo": [
+        16,
+        11,
+        12
+      ],
+      "executionTimesCode": [
+        113,
+        112,
+        112
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_StockAwaited",
+      "avgExecutionTimeMongo": 7.33,
+      "avgExecutionTimeCode": 57.33,
+      "executionTimesMongo": [
+        18,
+        2,
+        2
+      ],
+      "executionTimesCode": [
+        58,
+        57,
+        57
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_company_status_created"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_PendingBidExtensionApprovals",
+      "avgExecutionTimeMongo": 2,
+      "avgExecutionTimeCode": 91.67,
+      "executionTimesMongo": [
+        4,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        56,
+        109,
+        110
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Draft",
+      "avgExecutionTimeMongo": 82.33,
+      "avgExecutionTimeCode": 56.33,
+      "executionTimesMongo": [
+        182,
+        32,
+        33
+      ],
+      "executionTimesCode": [
+        57,
+        56,
+        56
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_status_closed_groups_created"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Cancelled",
+      "avgExecutionTimeMongo": 104.67,
+      "avgExecutionTimeCode": 57.33,
+      "executionTimesMongo": [
+        241,
+        37,
+        36
+      ],
+      "executionTimesCode": [
+        56,
+        58,
+        58
+      ],
+      "indexesUsed": [
+        "idx_lots_active_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_MyBidsOnSale",
+      "avgExecutionTimeMongo": 4,
+      "avgExecutionTimeCode": 111.67,
+      "executionTimesMongo": [
+        8,
+        2,
+        2
+      ],
+      "executionTimesCode": [
+        113,
+        112,
+        110
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_IncomingCounterbid",
+      "avgExecutionTimeMongo": 1,
+      "avgExecutionTimeCode": 113,
+      "executionTimesMongo": [
+        1,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        111,
+        116,
+        112
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Stock",
+      "avgExecutionTimeMongo": 4.67,
+      "avgExecutionTimeCode": 94.67,
+      "executionTimesMongo": [
+        8,
+        3,
+        3
+      ],
+      "executionTimesCode": [
+        59,
+        112,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_status_closed_groups_created"
+      ]
+    },
+    {
+      "queryName": "Buyer_MenuItem_Favorite",
+      "avgExecutionTimeMongo": 1.33,
+      "avgExecutionTimeCode": 57.33,
+      "executionTimesMongo": [
+        1,
+        1,
+        2
+      ],
+      "executionTimesCode": [
+        58,
+        57,
+        57
+      ],
+      "indexesUsed": [
+        "idx_lots_favorited_users"
+      ]
+    },
+    {
+      "queryName": "Buyer_Counts",
+      "avgExecutionTimeMongo": 59.33,
+      "avgExecutionTimeCode": 167,
+      "executionTimesMongo": [
+        62,
+        67,
+        49
+      ],
+      "executionTimesCode": [
+        167,
+        168,
+        166
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_company_status_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Concept",
+      "avgExecutionTimeMongo": 1,
+      "avgExecutionTimeCode": 75,
+      "executionTimesMongo": [
+        1,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        57,
+        57,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_WaitingForBid",
+      "avgExecutionTimeMongo": 1.33,
+      "avgExecutionTimeCode": 93.33,
+      "executionTimesMongo": [
+        2,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        56,
+        113,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_buyer_status_closed_groups_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_InPreparation",
+      "avgExecutionTimeMongo": 7.33,
+      "avgExecutionTimeCode": 93,
+      "executionTimesMongo": [
+        10,
+        6,
+        6
+      ],
+      "executionTimesCode": [
+        58,
+        111,
+        110
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ReadyForSale",
+      "avgExecutionTimeMongo": 1.33,
+      "avgExecutionTimeCode": 94,
+      "executionTimesMongo": [
+        2,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        59,
+        112,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_InCatalog",
+      "avgExecutionTimeMongo": 8,
+      "avgExecutionTimeCode": 95,
+      "executionTimesMongo": [
+        12,
+        6,
+        6
+      ],
+      "executionTimesCode": [
+        59,
+        113,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BidsReceived",
+      "avgExecutionTimeMongo": 5.33,
+      "avgExecutionTimeCode": 93,
+      "executionTimesMongo": [
+        7,
+        5,
+        4
+      ],
+      "executionTimesCode": [
+        59,
+        111,
+        109
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_auctioneer_status_vehicle_created",
+        "idx_lots_seller_owner_status_vehicle_modified"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BidsInConsideration",
+      "avgExecutionTimeMongo": 11,
+      "avgExecutionTimeCode": 93.33,
+      "executionTimesMongo": [
+        12,
+        13,
+        8
+      ],
+      "executionTimesCode": [
+        57,
+        112,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_WaitingForBuyer",
+      "avgExecutionTimeMongo": 3,
+      "avgExecutionTimeCode": 94,
+      "executionTimesMongo": [
+        3,
+        3,
+        3
+      ],
+      "executionTimesCode": [
+        60,
+        111,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_bids_status_vehicle"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ExtensionRequest",
+      "avgExecutionTimeMongo": 2,
+      "avgExecutionTimeCode": 94,
+      "executionTimesMongo": [
+        2,
+        2,
+        2
+      ],
+      "executionTimesCode": [
+        57,
+        114,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_bids_by_company_status"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_NotSold",
+      "avgExecutionTimeMongo": 56.67,
+      "avgExecutionTimeCode": 94,
+      "executionTimesMongo": [
+        56,
+        56,
+        58
+      ],
+      "executionTimesCode": [
+        60,
+        112,
+        110
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_BackOrder",
+      "avgExecutionTimeMongo": 25,
+      "avgExecutionTimeCode": 94,
+      "executionTimesMongo": [
+        63,
+        6,
+        6
+      ],
+      "executionTimesCode": [
+        57,
+        112,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_SellCompleted",
+      "avgExecutionTimeMongo": 33.33,
+      "avgExecutionTimeCode": 93,
+      "executionTimesMongo": [
+        88,
+        6,
+        6
+      ],
+      "executionTimesCode": [
+        58,
+        110,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Published",
+      "avgExecutionTimeMongo": 3.33,
+      "avgExecutionTimeCode": 93.33,
+      "executionTimesMongo": [
+        4,
+        3,
+        3
+      ],
+      "executionTimesCode": [
+        58,
+        111,
+        111
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_bids_status_vehicle"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_Stock",
+      "avgExecutionTimeMongo": 18.33,
+      "avgExecutionTimeCode": 96.33,
+      "executionTimesMongo": [
+        23,
+        16,
+        16
+      ],
+      "executionTimesCode": [
+        61,
+        115,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_MenuItem_ToBePublished",
+      "avgExecutionTimeMongo": 1,
+      "avgExecutionTimeCode": 94.33,
+      "executionTimesMongo": [
+        1,
+        1,
+        1
+      ],
+      "executionTimesCode": [
+        57,
+        113,
+        113
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    },
+    {
+      "queryName": "Seller_Counts",
+      "avgExecutionTimeMongo": 54.33,
+      "avgExecutionTimeCode": 96.67,
+      "executionTimesMongo": [
+        58,
+        53,
+        52
+      ],
+      "executionTimesCode": [
+        60,
+        116,
+        114
+      ],
+      "indexesUsed": [
+        "idx_lots_seller_owner_status_vehicle_created",
+        "idx_lots_seller_auctioneer_status_vehicle_created"
+      ]
+    }
+  ]
+}
