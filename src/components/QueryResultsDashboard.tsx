@@ -8,10 +8,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  LineChart,
-  Line,
-  ScatterChart,
-  Scatter,
   Cell,
 } from 'recharts';
 import { QueryResult } from '../types';
@@ -520,7 +516,7 @@ export default function QueryResultsDashboard({ queryDatasets, onDatasetAdd }: Q
               <YAxis />
               <Tooltip />
               <Bar dataKey="count" fill="#8884d8">
-                {indexUsage.slice(0, 15).map((entry, index) => (
+                {indexUsage.slice(0, 15).map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Bar>
