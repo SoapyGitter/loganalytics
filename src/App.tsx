@@ -131,7 +131,15 @@ function App() {
             <LogTable logs={filteredLogs} />
           </>
         ) : (
-          <QueryResultsDashboard queryDatasets={queryDatasets} />
+          <QueryResultsDashboard 
+            queryDatasets={queryDatasets} 
+            onDatasetAdd={(name, results) => {
+              setQueryDatasets(prev => ({
+                ...prev,
+                [name]: results,
+              }));
+            }}
+          />
         )}
       </main>
     </div>

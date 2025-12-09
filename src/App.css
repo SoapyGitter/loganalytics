@@ -591,6 +591,59 @@
   font-weight: 600;
 }
 
+/* Upload Container */
+.upload-container {
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e8f0fe;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.upload-container h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.upload-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-message {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.upload-message.error {
+  background: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffb74d;
+}
+
+.upload-message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #81c784;
+}
+
+.upload-message strong {
+  font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .app-header {

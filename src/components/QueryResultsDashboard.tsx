@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import {
   BarChart,
   Bar,
@@ -20,18 +20,24 @@ import { format } from 'date-fns';
 
 interface QueryResultsDashboardProps {
   queryDatasets: { [key: string]: QueryResult[] };
+  onDatasetAdd?: (name: string, results: QueryResult[]) => void;
 }
 
 type SortField = 'queryName' | 'avgExecutionTimeMongo' | 'avgExecutionTimeCode' | 'totalTime' | 'indexCount';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#00ff00', '#0088fe', '#ff00ff', '#ff0000'];
 
-export default function QueryResultsDashboard({ queryDatasets }: QueryResultsDashboardProps) {
+export default function QueryResultsDashboard({ queryDatasets, onDatasetAdd }: QueryResultsDashboardProps) {
   const datasetNames = Object.keys(queryDatasets);
   const [selectedDataset, setSelectedDataset] = useState<string>(datasetNames[0] || '');
   const [sortField, setSortField] = useState<SortField>('queryName');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [showUpload, setShowUpload] = useState<boolean>(false);
+  const [uploadDatasetName, setUploadDatasetName] = useState<string>('');
+  const [uploadError, setUploadError] = useState<string>('');
+  const [uploadSuccess, setUploadSuccess] = useState<string>('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (datasetNames.length > 0 && !datasetNames.includes(selectedDataset)) {
@@ -176,6 +182,110 @@ export default function QueryResultsDashboard({ queryDatasets }: QueryResultsDas
       .sort((a, b) => b.count - a.count);
   }, [queryResults]);
 
+  const validateQueryResult = (result: any): result is QueryResult => {
+    return (
+      typeof result === 'object' &&
+      typeof result.queryName === 'string' &&
+      typeof result.avgExecutionTimeMongo === 'number' &&
+      typeof result.avgExecutionTimeCode === 'number' &&
+      Array.isArray(result.executionTimesMongo) &&
+      Array.isArray(result.executionTimesCode) &&
+      Array.isArray(result.indexesUsed) &&
+      result.executionTimesMongo.every((t: any) => typeof t === 'number') &&
+      result.executionTimesCode.every((t: any) => typeof t === 'number') &&
+      result.indexesUsed.every((i: any) => typeof i === 'string')
+    );
+  };
+
+  const validateQueryData = (data: any): QueryResult[] => {
+    if (!data || typeof data !== 'object') {
+      throw new Error('Invalid JSON format: Expected an object');
+    }
+
+    if (!data.results || !Array.isArray(data.results)) {
+      throw new Error('Invalid JSON format: Expected a "results" array');
+    }
+
+    if (data.results.length === 0) {
+      throw new Error('Query results array is empty');
+    }
+
+    const invalidResults: number[] = [];
+    data.results.forEach((result: any, index: number) => {
+      if (!validateQueryResult(result)) {
+        invalidResults.push(index);
+      }
+    });
+
+    if (invalidResults.length > 0) {
+      throw new Error(
+        `Invalid query result format at indices: ${invalidResults.join(', ')}. ` +
+        `Expected format: { queryName: string, avgExecutionTimeMongo: number, ` +
+        `avgExecutionTimeCode: number, executionTimesMongo: number[], ` +
+        `executionTimesCode: number[], indexesUsed: string[] }`
+      );
+    }
+
+    return data.results as QueryResult[];
+  };
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setUploadError('');
+    setUploadSuccess('');
+
+    // Validate file type
+    if (!file.name.endsWith('.json')) {
+      setUploadError('Please upload a JSON file');
+      return;
+    }
+
+    try {
+      const text = await file.text();
+      const data = JSON.parse(text);
+      const results = validateQueryData(data);
+
+      // Validate dataset name
+      const datasetName = uploadDatasetName.trim() || file.name.replace('.json', '');
+      if (!datasetName) {
+        setUploadError('Please provide a dataset name');
+        return;
+      }
+
+      if (datasetNames.includes(datasetName)) {
+        setUploadError(`Dataset "${datasetName}" already exists. Please choose a different name.`);
+        return;
+      }
+
+      // Add the dataset
+      if (onDatasetAdd) {
+        onDatasetAdd(datasetName, results);
+        setUploadSuccess(`Successfully uploaded "${datasetName}" with ${results.length} query results`);
+        setSelectedDataset(datasetName);
+        setUploadDatasetName('');
+        setShowUpload(false);
+        
+        // Reset file input
+        if (fileInputRef.current) {
+          fileInputRef.current.value = '';
+        }
+
+        // Clear success message after 3 seconds
+        setTimeout(() => setUploadSuccess(''), 3000);
+      }
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        setUploadError('Invalid JSON format. Please check your file.');
+      } else if (error instanceof Error) {
+        setUploadError(error.message);
+      } else {
+        setUploadError('An error occurred while processing the file');
+      }
+    }
+  };
+
   const handleExport = () => {
     const exportData = sortedResults.map(result => ({
       'Query Name': result.queryName,
@@ -206,9 +316,71 @@ export default function QueryResultsDashboard({ queryDatasets }: QueryResultsDas
   return (
     <div className="analytics-dashboard">
       <div className="dashboard-header">
-        <h1>Query Performance Analytics</h1>
+        <div className="section-header">
+          <h1>Query Performance Analytics</h1>
+          <button
+            onClick={() => {
+              setShowUpload(!showUpload);
+              setUploadError('');
+              setUploadSuccess('');
+            }}
+            className="export-button"
+            style={{ marginLeft: 'auto' }}
+          >
+            {showUpload ? 'Cancel Upload' : 'Upload Query JSON'}
+          </button>
+        </div>
+
+        {showUpload && (
+          <div className="upload-container">
+            <h3>Upload Query Results</h3>
+            <p className="upload-subtitle">
+              Upload a JSON file following the standard format with a "results" array containing query result objects.
+            </p>
+            <div className="upload-form">
+              <div className="filter-group">
+                <label htmlFor="dataset-name">Dataset Name (optional)</label>
+                <input
+                  id="dataset-name"
+                  type="text"
+                  placeholder="Leave empty to use filename"
+                  value={uploadDatasetName}
+                  onChange={(e) => setUploadDatasetName(e.target.value)}
+                />
+              </div>
+              <div className="filter-group">
+                <label htmlFor="file-upload">Select JSON File</label>
+                <input
+                  id="file-upload"
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json"
+                  onChange={handleFileUpload}
+                  style={{
+                    padding: '0.75rem',
+                    border: '2px solid #e0e0e0',
+                    borderRadius: '8px',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
+              {uploadError && (
+                <div className="upload-message error">
+                  <strong>Error:</strong> {uploadError}
+                </div>
+              )}
+              {uploadSuccess && (
+                <div className="upload-message success">
+                  <strong>Success:</strong> {uploadSuccess}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {datasetNames.length > 1 && (
-          <div className="filters-container" style={{ marginBottom: '1.5rem' }}>
+          <div className="filters-container" style={{ marginBottom: '1.5rem', marginTop: showUpload ? '1.5rem' : '0' }}>
             <h3>Select Dataset</h3>
             <div className="filters-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
               {datasetNames.map(name => (
